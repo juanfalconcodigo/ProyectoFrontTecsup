@@ -1,0 +1,124 @@
+.top_navbar {
+    width: calc(100% - 250px);
+    height: 60px;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 25px;
+    position: fixed;
+    top: 0;
+    left: 250px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.125);
+    transition: all 0.3s ease;
+    z-index: 99;
+}
+
+.top_navbar .hamburger {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    display: none;
+}
+
+.top_navbar .hamburger .fas {
+    color: #88a3d0;
+    font-size: 25px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.top_navbar .menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    border-bottom: 0px;
+}
+
+.top_navbar .menu li a {
+    margin: 0 15px;
+    padding: 0 15px;
+    position: relative;
+    color: #1d4c9e;
+    font-weight: 400;
+    text-align: center;
+}
+
+.top_navbar .menu li a:before {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #1fafec;
+    display: none;
+}
+
+.top_navbar .menu li a.active,
+.top_navbar .menu li a:hover {
+    color: #1fafec;
+}
+
+.top_navbar .menu li a:hover:before,
+.top_navbar .menu li a.active:before {
+    display: block;
+}
+
+.top_navbar .right_bar {
+    display: flex;
+    align-item: center;
+    list-style: none;
+}
+
+.top_navbar .right_bar li {
+    margin: 0 10px;
+}
+
+.top_navbar .right_bar .fas {
+    font-size: 25px;
+    cursor: pointer;
+    color: #88a3d0;
+}
+
+.top_navbar .right_bar li:hover,
+.top_navbar .hamburger .fas:hover {
+    opacity: 0.5;
+}
+
+@media screen and (max-width: 800px) {
+    .top_navbar {
+        margin-left: 0;
+        width: 100%;
+    }
+    .top_navbar {
+        left: 0;
+    }
+    .top_navbar .hamburger {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    /* .top_navbar .menu {
+        display: none;
+    } */
+    .top_navbar .right_bar {
+        display: flex;
+        position: absolute;
+        background: #fff;
+        top: 70px;
+        right: 10px;
+        border-radius: 8px;
+        padding: .2rem;
+        flex-direction: column;
+        & li {
+            margin: 8px;
+        }
+    }
+    .top_navbar .right_bar:hover {
+        box-shadow: 0 1.4rem 8rem rgba(0, 0, 0, 0.5);
+    }
+}

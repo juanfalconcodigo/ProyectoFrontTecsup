@@ -1,0 +1,11 @@
+<div class="profile_img_info">
+    <div class="img">
+        <img [src]="user.photo_url || 'assets/img/avatar.svg'" alt="profile_pic" />
+    </div>
+    <div class="info">
+        <p class="name">{{user.first_name | uppercase}}</p>
+        <p class="place">
+            <span><i class="fas fa-map-marker-alt"></i></span>{{user.role}}
+        </p>
+    </div>
+</div>

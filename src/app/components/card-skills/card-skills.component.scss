@@ -1,0 +1,43 @@
+.profile_skills {
+    background: #fff;
+    border-radius: 10px;
+    padding: 25px;
+}
+
+.profile_skills .skills {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #cccccc;
+}
+
+.profile_skills .skills p {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.profile_skills .skills ul {
+    list-style: none;
+}
+
+.profile_skills .skills ul li {
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+
+.profile_skills .skills ul li .fab {
+    width: 40px;
+}
+
+.profile_skills .tags_wrap {
+    padding-top: 20px;
+}
+
+.profile_skills .tags_wrap span.tag {
+    background: #e4e9ef;
+    padding: 10px 15px;
+    display: inline-block;
+    border-radius: 10px;
+    margin: 5px;
+    font-size: 14px;
+}

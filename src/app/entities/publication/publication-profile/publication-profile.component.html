@@ -1,0 +1,30 @@
+<section>
+    <div *ngIf="objPublication===null" class="spinner-container">
+        <i class="fas fa-cog fa-spin fa-7x"></i>
+    </div>
+    <div *ngIf="objPublication" class="container">
+
+        <div class="blog-post">
+            <div class="blog-post__img">
+                <img [src]="objPublication.photo_url" alt="Image">
+            </div>
+            <div class="blog-post__info">
+                <div class="blog-post__date">
+                    <span>{{objPublication.date|date:'EEEE'|uppercase}}</span>
+                    <span>{{objPublication.date|date}}</span>
+                </div>
+                <h2 class="blog-post__title">
+                    {{objPublication['user'].first_name | uppercase}}
+                </h2>
+                <p class="blog-post__text">
+                    {{objPublication.description}}
+                </p>
+                <div href="" class="blog-post__user">
+                    <nz-avatar class="cursor_pointer" [nzTooltipTitle]="objPublication['user'].first_name | uppercase" nz-tooltip [nzSize]="64" nzIcon="user" [nzSrc]="objPublication['user'].photo_url"></nz-avatar>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>

@@ -1,0 +1,48 @@
+<div class="container-chat">
+    <div *ngIf="data.length===0" class="empty">
+        <img src="assets/img/empty.svg" alt="">
+    </div>
+
+    <!-- <nz-list *ngIf="data.length>=0" [nzDataSource]="data" [nzRenderItem]="item" [nzItemLayout]="'horizontal'" class="container-menssages">
+        <ng-template #item let-item>
+            <nz-comment [nzAuthor]="item.author" [nzDatetime]="item.displayTime">
+                <nz-avatar nz-comment-avatar nzIcon="user" [nzSrc]="item.avatar"></nz-avatar>
+                <nz-comment-content>
+                    <p>{{ item.content }}</p>
+                </nz-comment-content>
+            </nz-comment>
+        </ng-template>
+    </nz-list> -->
+    <!-- <nz-list [nzDataSource]="data" [nzRenderItem]="item" [nzItemLayout]="'horizontal'" class="container-menssages"> -->
+    <div [ngClass]="{'d_none':data.length===0,'d-block':data.length>0}" class="container-menssages" id="id-chat">
+        <div *ngFor="let msg of data">
+            <nz-comment [nzAuthor]="msg.author">
+                <!-- [nzDatetime]="time" -->
+                <nz-avatar nz-comment-avatar nzIcon="user" [nzSrc]="msg.photo_url"></nz-avatar>
+                <nz-comment-content>
+                    <p>{{ msg.content }}</p>
+                </nz-comment-content>
+                <!-- <nz-comment-action>
+                        <nz-tag [nzColor]="'#87d068'">Admin</nz-tag>
+                    </nz-comment-action> -->
+                <!-- <nz-comment-action>Reply to</nz-comment-action> -->
+            </nz-comment>
+            <nz-divider style="margin:5px auto;"></nz-divider>
+        </div>
+    </div>
+
+    <!-- </nz-list> -->
+    <nz-comment>
+        <nz-avatar nz-comment-avatar nzIcon="user" [nzSrc]="user.photo_url"></nz-avatar>
+        <nz-comment-content>
+            <nz-form-item>
+                <textarea [(ngModel)]="inputValue" nz-input rows="4"></textarea>
+            </nz-form-item>
+            <nz-form-item>
+                <button nz-button nzType="primary" [nzLoading]="submitting" [disabled]="!inputValue" (click)="handleSubmit()">
+              Enviar mensaje
+            </button>
+            </nz-form-item>
+        </nz-comment-content>
+    </nz-comment>
+</div>

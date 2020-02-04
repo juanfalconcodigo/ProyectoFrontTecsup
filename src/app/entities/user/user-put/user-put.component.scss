@@ -1,0 +1,68 @@
+.container_user_put {
+    width: 100%;
+    min-height: calc(100vh - 173px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-form-container {
+    max-width: 450px;
+    margin: auto;
+    background-image: url('src/assets/img/imagen-fondo-profile.jpg');
+    background-size: cover;
+    border-radius: 20px;
+    & .card-form-photo {
+        padding: 1rem;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.card-form {
+    padding: 2rem;
+    border-radius: 20px;
+    background: #fff;
+    & .card-form-group {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        /* grid-template-areas: "first_name last_name" "email role" "button button"; */
+        grid-gap: .5rem;
+        /*  & .form_first_name {
+            grid-area: first_name;
+        }
+        & .form_last_name {
+            grid-area: last_name;
+        }
+        & .form_email {
+            grid-area: email;
+        }
+        & .form_role {
+            grid-area: role;
+            max-width: 189px;
+        }
+        & .form_button {
+            grid-area: button;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 0px;
+        } */
+    }
+    & .form_button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        & .form_button_item {
+            margin-bottom: 0px;
+        }
+    }
+}
+
+@media screen and (max-width: 570px) {
+    .card-form {
+        & .card-form-group {
+            grid-template-columns: 1fr;
+        }
+    }
+}

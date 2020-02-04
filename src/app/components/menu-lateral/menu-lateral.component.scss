@@ -1,0 +1,80 @@
+.profile_info {
+    padding: 30px 50px;
+    text-align: center;
+}
+
+.profile_info .profile_img {
+    width: 125px;
+    margin: 0 auto 15px;
+}
+
+.profile_info .profile_img img {
+    width: 100%;
+    display: block;
+}
+
+.profile_info .profile_data .name {
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.profile_info .profile_data .role {
+    font-weight: 300;
+    color: #88a3d0;
+    margin-bottom: 15px;
+}
+
+.profile_info .profile_data .btn {
+    padding: 10px;
+    border: 1px solid #1fafec;
+    border-radius: 25px;
+    color: #1fafec;
+    cursor: pointer;
+}
+
+.profile_info .profile_data .btn:hover {
+    background: #1fafec;
+    color: #fff;
+}
+
+
+/* ul */
+
+.siderbar_menu li a {
+    padding: 10px 50px;
+    display: block;
+    height: 90px;
+    position: relative;
+    margin-bottom: 1px;
+    color: #88a3d0;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.siderbar_menu li a .icon {
+    font-size: 32px;
+    margin-bottom: 5px;
+}
+
+.siderbar_menu li a:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: #1fafec;
+    display: none;
+}
+
+.siderbar_menu li a:hover,
+.siderbar_menu li a.active {
+    background: #1d4c9e;
+    color: #fff;
+}
+
+.siderbar_menu li a:hover:before,
+.siderbar_menu li a.active:before {
+    display: block;
+}

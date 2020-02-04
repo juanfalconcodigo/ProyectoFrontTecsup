@@ -1,0 +1,32 @@
+.profile_img_info {
+    display: flex;
+    background: #fff;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+.profile_img_info .img {
+    width: 125px;
+}
+
+.profile_img_info .img img {
+    width: 100%;
+    display: block;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.profile_img_info .info {
+    width: calc(100% - 125px);
+    padding: 20px;
+}
+
+.profile_img_info .info .name {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.profile_img_info .place {
+    font-weight: 300;
+}

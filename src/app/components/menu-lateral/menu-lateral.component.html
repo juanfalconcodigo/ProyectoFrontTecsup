@@ -1,0 +1,26 @@
+<div class="profile_info">
+    <div class="profile_img">
+        <!-- [nzShape]	the shape of avatar	'circle' | 'square' -->
+        <nz-avatar style="cursor: pointer;" [routerLink]="['user/profile']" [nzShape]="'circle'" [nzSize]="110" [nzIcon]="'user'" [nzSrc]="user.photo_url || 'assets/img/avatar.svg'">
+        </nz-avatar>
+        <!-- <img [src]="user.photo_url || 'assets/img/avatar.svg'" alt="profile_img"> -->
+    </div>
+    <div class="profile_data">
+        <p class="name">{{user.first_name | uppercase}}</p>
+        <p class="role">
+            {{user.role}}
+        </p>
+        <!-- <p class="role">
+            <nz-tag [nzColor]="'#2db7f5'">{{user.role}}</nz-tag>
+        </p> -->
+        <div class="btn" [routerLink]="['user/edit']">Actualizar Perfil</div>
+    </div>
+</div>
+<ul class="siderbar_menu">
+    <li *ngFor="let ruta of rutas">
+        <a [routerLink]="ruta.path" routerLinkActive="active">
+            <div class="icon"><i [ngClass]="ruta.icon"></i></div>
+            <div class="title">{{ruta.name}}</div>
+        </a>
+    </li>
+</ul>

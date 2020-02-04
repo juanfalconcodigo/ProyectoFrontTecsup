@@ -1,0 +1,13 @@
+footer {
+    display: flex;
+    justify-content: center;
+    background: #FFFFFF;
+    padding: 1rem;
+    & p {
+        margin: auto;
+    }
+}
+
+.font-w-500 {
+    font-weight: 500;
+}

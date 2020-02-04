@@ -1,0 +1,21 @@
+<section>
+    <div *ngIf="loading" class="spinner-container">
+        <i class="fas fa-cog fa-spin fa-7x"></i>
+    </div>
+    <div *ngIf="!loading" class="container">
+        <div class="header">
+            <h1>Nuevas Publicaciones</h1>
+            <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse laborum, officia delectus corrupti modi natus?</p> -->
+        </div>
+        <main *ngIf="!loading && publications.length>0">
+            <div *ngFor="let publication of publications" class="singleBlog">
+                <img [src]="publication.photo_url" alt="">
+                <div class="blogContent">
+                    <h3>{{publication['category'].name | uppercase}} <span><nz-tag [nzColor]="'#108ee9'">{{publication.cellphone}}</nz-tag></span></h3>
+                    <p>By {{publication['user'].first_name | uppercase}} | {{publication.date | date}}</p>
+                    <a (click)="routerPublicationProfile(publication._id)" class="btn">Ver más</a>
+                </div>
+            </div>
+        </main>
+    </div>
+</section>

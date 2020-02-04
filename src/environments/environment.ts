@@ -1,9 +1,15 @@
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
+const URL_BASE='http://localhost:5000';
+/* const URL_BASE="https://tecsup-february.herokuapp.com"; */
+import {SocketIoConfig} from 'ngx-socket-io';
 
+const CONFIG_SOCKET:SocketIoConfig={url:URL_BASE, options:{}};
 export const environment = {
-  production: false
+  production: false,
+  urlBase:URL_BASE,
+  config:CONFIG_SOCKET
 };
 
 /*

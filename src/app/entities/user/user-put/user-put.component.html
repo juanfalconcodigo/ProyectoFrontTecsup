@@ -1,0 +1,84 @@
+<div class="container_user_put">
+    <div class="card-form-container">
+        <div class="card-form-photo">
+            <nz-avatar style="border:8px solid #fff" [nzShape]="'circle'" [nzSrc]="user.photo_url" [nzSize]="120" nzIcon="user"></nz-avatar>
+        </div>
+
+        <div class="card-form">
+
+            <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+                <div class="card-form-group">
+                    <nz-form-item class="form_first_name">
+                        <nz-form-control nzErrorTip="Ingrese su nombre!">
+                            <nz-input-group nzPrefixIcon="user" [nzSuffix]="suffixInfoFirstName">
+                                <input type="text" nz-input formControlName="first_name" placeholder="Ingrese nombre" />
+                            </nz-input-group>
+                            <ng-template #suffixInfoFirstName>
+                                <i nz-icon nz-tooltip nzTitle="Este sera su nombre" nzType="info-circle"></i>
+                            </ng-template>
+                        </nz-form-control>
+                    </nz-form-item>
+
+                    <nz-form-item class="form_last_name">
+                        <nz-form-control nzErrorTip="Ingrese su apellido!">
+                            <nz-input-group nzPrefixIcon="team" [nzSuffix]="suffixInfoLastName">
+                                <input type="text" nz-input formControlName="last_name" placeholder="Ingrese apellido" />
+                            </nz-input-group>
+                            <ng-template #suffixInfoLastName>
+                                <i nz-icon nz-tooltip nzTitle="Este sera su apellido" nzType="info-circle"></i>
+                            </ng-template>
+                        </nz-form-control>
+                    </nz-form-item>
+
+                    <nz-form-item class="form_email">
+                        <!-- <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="email">E-mail</nz-form-label> -->
+                        <nz-form-control [nzErrorTip]="emailErrorTpl">
+                            <nz-input-group nzPrefixIcon="google" [nzSuffix]="suffixInfoEmail">
+                                <input nz-input formControlName="email" placeholder="Ingrese correo" type="email" />
+                            </nz-input-group>
+                            <ng-template #emailErrorTpl let-control>
+                                <ng-container *ngIf="control.hasError('email')">
+                                    No es un correo válido!
+                                </ng-container>
+                                <ng-container *ngIf="control.hasError('required')">
+                                    Porfavor ingrese su correo!
+                                </ng-container>
+                            </ng-template>
+                            <ng-template #suffixInfoEmail>
+                                <i nz-icon nz-tooltip nzTitle="Este sera su usuario" nzType="info-circle"></i>
+                            </ng-template>
+                        </nz-form-control>
+                    </nz-form-item>
+
+
+                    <nz-form-item class="form_role">
+                        <nz-form-control [nzErrorTip]="roleErrorTpl">
+                            <nz-select id="role" formControlName="role" [nzSize]="'default'" nzPlaceHolder="Seleccione tipo usuario">
+                                <nz-option *ngFor="let role of roles" [nzValue]="role.value" [nzLabel]="role.name"></nz-option>
+
+
+                                <!-- <nz-option nzValue="USER_NORMAL" nzLabel="Normal"></nz-option>
+                                <nz-option nzValue="USER_SPECIALIST" nzLabel="Especialista"></nz-option> -->
+                            </nz-select>
+                            <ng-template #roleErrorTpl let-control>
+                                <ng-container *ngIf="control.hasError('required')">
+                                    Porfavor seleccione rol!
+                                </ng-container>
+                            </ng-template>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+
+                <div class="form_button">
+                    <nz-form-item class="form_button_item">
+                        <nz-form-control>
+                            <button nz-button class="login-form-button" [nzType]="'primary'">Actualizar Datos</button>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</div>

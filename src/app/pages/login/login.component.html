@@ -1,0 +1,84 @@
+<img class="wave" src="assets/img/wave.png">
+<div class="container">
+    <div class="img">
+        <img src="assets/img/bg.svg">
+    </div>
+    <div class="login-content">
+        <form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="submitForm()">
+            <img src="assets/img/avatar.svg">
+            <h2 class="title">Welcome</h2>
+            <nz-form-item>
+                <!-- <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="email">E-mail</nz-form-label> -->
+                <nz-form-control nzHasFeedback [nzErrorTip]="emailErrorTpl">
+                    <nz-input-group nzPrefixIcon="user">
+                        <input nz-input formControlName="email" placeholder="Ingrese su correo" type="email" />
+                    </nz-input-group>
+                    <ng-template #emailErrorTpl let-control>
+                        <ng-container *ngIf="control.hasError('email')">
+                            No es un correo válido!
+                        </ng-container>
+                        <ng-container *ngIf="control.hasError('required')">
+                            Porfavor ingrese su correo!
+                        </ng-container>
+                    </ng-template>
+                </nz-form-control>
+            </nz-form-item>
+            <nz-form-item>
+                <nz-form-control nzHasFeedback [nzErrorTip]="passwordErrorTpl">
+                    <!--  [nzPrefix]="prefixPassword" -->
+                    <nz-input-group nzPrefixIcon="lock" [nzSuffix]="suffixPassword">
+                        <input [type]="passwordVisible ? 'text' : 'password'" nz-input formControlName="password" placeholder="Ingrese su contraseña" />
+                    </nz-input-group>
+                    <ng-template #passwordErrorTpl let-control>
+                        <ng-container *ngIf="control.hasError('minlength')">
+                            Minimo 6 caracteres!
+                        </ng-container>
+                        <ng-container *ngIf="control.hasError('required')">
+                            Porfavor ingrese su contraseña!
+                        </ng-container>
+                    </ng-template>
+                    <!-- <ng-template #prefixPassword>
+                        <i nz-icon nzType="lock" nzTheme="twotone"></i>
+                    </ng-template> -->
+                    <ng-template #suffixPassword>
+                        <i nz-icon [nzType]="passwordVisible ? 'eye-invisible' : 'eye'" (click)="passwordVisible = !passwordVisible"></i>
+                    </ng-template>
+                </nz-form-control>
+            </nz-form-item>
+            <nz-form-item>
+                <nz-form-control>
+                    <label nz-checkbox formControlName="remember">
+                  <span>Remember me</span>
+                </label>
+                    <a class="login-form-forgot" class="login-form-forgot">Forgot password</a>
+                    <button nz-button class="login-form-button" [nzType]="'primary'">Login</button>
+                    <a [routerLink]="['/register']">Resgístrese!</a>
+                </nz-form-control>
+            </nz-form-item>
+        </form>
+        <!-- <form action="index.html">
+            <img src="assets/img/avatar.svg">
+            <h2 class="title">Welcome</h2>
+            <div class="input-div one">
+                <div class="i">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="div">
+                    <h5>Username</h5>
+                    <input type="text" class="input">
+                </div>
+            </div>
+            <div class="input-div pass">
+                <div class="i">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <div class="div">
+                    <h5>Password</h5>
+                    <input type="password" class="input">
+                </div>
+            </div>
+            <a href="#">Forgot Password?</a>
+            <input type="submit" class="btn" value="Login">
+        </form> -->
+    </div>
+</div>

@@ -1,0 +1,25 @@
+.wrapper_user {
+    padding: 1rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 20px;
+    justify-content: center;
+    & .profile {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    & .profile-aside {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .wrapper_user {
+        grid-template-columns: 1fr;
+        padding: .2rem;
+    }
+}

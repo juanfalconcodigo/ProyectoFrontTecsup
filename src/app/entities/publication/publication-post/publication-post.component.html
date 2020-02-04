@@ -1,0 +1,83 @@
+<section>
+    <!-- <div *ngIf="objPublication===null" class="spinner-container">
+        <i class="fas fa-cog fa-spin fa-7x"></i>
+    </div> -->
+    <div class="container">
+
+        <div class="form_container">
+            <div class="img_container">
+                <input type="file" style="display: none;" (change)="onPhotoSelected($event)" #photoInput>
+
+                <!-- <img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" /> -->
+                <img nz-tooltip nzTooltipTitle="Ingrese foto de la publicación" style="cursor: pointer;" [src]="photoSelected || 'https://res.cloudinary.com/dbxg3ojl8/image/upload/v1577136832/no-image_xk7dvu.png'" alt="No image" (click)="photoInput.click()">
+                <!-- <img [src]="'https://res.cloudinary.com/dbxg3ojl8/image/upload/v1577136832/no-image_xk7dvu.png'||'assets/img/no-image.png'" alt=""> -->
+
+            </div>
+            <div class="form">
+
+                <form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="submitForm()">
+
+                    <nz-form-item>
+                        <nz-form-control nzHasFeedback [nzErrorTip]="cellphoneErrorTpl">
+                            <nz-input-group nzPrefixIcon="phone">
+                                <input type="text" nz-input formControlName="cellphone" placeholder="Ingrese teléfono" />
+                            </nz-input-group>
+                            <ng-template #cellphoneErrorTpl let-control>
+                                <ng-container *ngIf="control.hasError('minlength')">
+                                    Minimo 7 carácteres!
+                                </ng-container>
+                                <ng-container *ngIf="control.hasError('pattern')">
+                                    Solo se aceptan carecteres numéricos!
+                                </ng-container>
+                                <ng-container *ngIf="control.hasError('required')">
+                                    Porfavor ingrese su teléfono!
+                                </ng-container>
+                            </ng-template>
+                        </nz-form-control>
+                    </nz-form-item>
+
+
+                    <nz-form-item>
+                        <nz-form-control nzHasFeedback [nzErrorTip]="categoryErrorTpl">
+                            <nz-select id="role" formControlName="category" [nzSize]="'default'" nzPlaceHolder="Seleccione categoría">
+                                <nz-option *ngFor="let category of categories" [nzValue]="category._id" [nzLabel]="category.name | uppercase"></nz-option>
+                            </nz-select>
+                            <ng-template #categoryErrorTpl let-control>
+                                <ng-container *ngIf="control.hasError('required')">
+                                    Porfavor seleccione categoría!
+                                </ng-container>
+                            </ng-template>
+                        </nz-form-control>
+                    </nz-form-item>
+
+
+                    <nz-form-item>
+                        <nz-form-control [nzErrorTip]="descriptionErrorTpl">
+
+                            <textarea rows="3" nz-input formControlName="description" placeholder="Ingrese descripción"></textarea>
+
+                            <ng-template #descriptionErrorTpl let-control>
+                                <ng-container *ngIf="control.hasError('minlength')">
+                                    Minimo 30 carácteres!
+                                </ng-container>
+                                <ng-container *ngIf="control.hasError('required')">
+                                    Porfavor ingrese la descripción!
+                                </ng-container>
+                            </ng-template>
+                        </nz-form-control>
+                    </nz-form-item>
+
+
+                    <nz-form-item class="m_b_0">
+                        <nz-form-control>
+                            <button nz-button class="login-form-button" [nzType]="'primary'">{{prueba|capitalizado:true}}</button>
+                        </nz-form-control>
+                    </nz-form-item>
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+</section>

@@ -1,0 +1,20 @@
+<ngx-spinner [fullScreen]="true" type="square-jelly-box" size="medium"></ngx-spinner>
+<div class="wrapper">
+    <div class="sidebar">
+        <div class="bg_shadow"></div>
+        <div class="sidebar__inner">
+            <div class="close">
+                <i class="fas fa-times"></i>
+            </div>
+            <app-menu-lateral></app-menu-lateral>
+        </div>
+    </div>
+    <div class="main_container">
+        <app-header></app-header>
+
+        <div class="container">
+            <router-outlet></router-outlet>
+        </div>
+        <app-footer></app-footer>
+    </div>
+</div>

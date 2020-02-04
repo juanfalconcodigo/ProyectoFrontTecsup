@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { WebSocketService } from './services/web-socket.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'codigo-tecsup-falcon';
+  constructor(private _webSocketService:WebSocketService){}
+
 }

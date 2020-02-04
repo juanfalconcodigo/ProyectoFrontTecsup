@@ -1,0 +1,51 @@
+<div class="top_navbar">
+    <div class="hamburger">
+        <div class="hamburger__inner">
+            <i class="fas fa-bars"></i>
+        </div>
+    </div>
+    <!-- <ul class="menu">
+        <li><a [routerLink]="['publication/list']" class="active">Publicaciones</a></li>
+        <li><a href="#">Mis Publicaciones</a></li>
+        <li><a href="#">Mi Ubicación</a></li>
+    </ul> -->
+    <ul class="menu" nz-menu nzMode="horizontal">
+        <li nz-submenu nzTitle="Publicaciones" nzIcon="picture">
+            <ul>
+                <li nz-menu-group nzTitle="Opciones">
+                    <ul>
+                        <li nz-menu-item [routerLink]="['publication/list']" routerLinkActive="nzSelected" [routerLinkActiveOptions]="{exact:true}">Recientes</li>
+                        <li nz-menu-item>Mío</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li nz-submenu nzTitle="Mas opciones" nzIcon="setting">
+            <ul>
+                <li nz-menu-group nzTitle="Item 2">
+                    <ul>
+                        <li nz-menu-item>Option 1</li>
+                        <li nz-menu-item>Option 2</li>
+                    </ul>
+                </li>
+                <!-- <li nz-menu-group nzTitle="Item 3">
+                    <ul>
+                        <li nz-menu-item>Option 3</li>
+                        <li nz-menu-item>Option 4</li>
+                        <li nz-submenu nzTitle="Sub Menu">
+                            <ul>
+                                <li nz-menu-item nzDisabled>Option 5</li>
+                                <li nz-menu-item>Option 6</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li> -->
+            </ul>
+        </li>
+    </ul>
+    <ul class="right_bar">
+        <li><i class="fas fa-search"></i></li>
+        <li><i nz-tooltip nzTooltipTitle="Cambiar password" class="fas fa-wrench" [routerLink]="['user/edit/password']"></i></li>
+        <li><i nz-tooltip nzTooltipTitle="Cerrar cesión" class="fas fa-sign-out-alt" (click)="logout()"></i></li>
+    </ul>
+</div>
